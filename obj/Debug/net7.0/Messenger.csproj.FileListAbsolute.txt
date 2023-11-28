@@ -1,0 +1,15 @@
+C:\vs\RSAMessenger\obj\Debug\net7.0\Messenger.csproj.AssemblyReference.cache
+C:\vs\RSAMessenger\obj\Debug\net7.0\Messenger.GeneratedMSBuildEditorConfig.editorconfig
+C:\vs\RSAMessenger\obj\Debug\net7.0\Messenger.AssemblyInfoInputs.cache
+C:\vs\RSAMessenger\obj\Debug\net7.0\Messenger.AssemblyInfo.cs
+C:\vs\RSAMessenger\obj\Debug\net7.0\Messenger.csproj.CoreCompileInputs.cache
+C:\vs\RSAMessenger\bin\Debug\net7.0\Messenger.exe
+C:\vs\RSAMessenger\bin\Debug\net7.0\Messenger.deps.json
+C:\vs\RSAMessenger\bin\Debug\net7.0\Messenger.runtimeconfig.json
+C:\vs\RSAMessenger\bin\Debug\net7.0\Messenger.dll
+C:\vs\RSAMessenger\bin\Debug\net7.0\Messenger.pdb
+C:\vs\RSAMessenger\obj\Debug\net7.0\Messenger.dll
+C:\vs\RSAMessenger\obj\Debug\net7.0\refint\Messenger.dll
+C:\vs\RSAMessenger\obj\Debug\net7.0\Messenger.pdb
+C:\vs\RSAMessenger\obj\Debug\net7.0\Messenger.genruntimeconfig.cache
+C:\vs\RSAMessenger\obj\Debug\net7.0\ref\Messenger.dll

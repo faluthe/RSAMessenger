@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EGvQrBztDR2HM79CuaLo6hNiYS3FRGqrpq8Vfz+UccHxr6kSVHSPTAPfPEmmEwVnGLgZe8+JWUNVw/yusR37hA==",
+  "dgSpecHash": "9K47w5GoYXSE0tYivkybCUFIZkH+/5uFOmY5xTKaLiek4uvlj5kI9NFETA2W9+UL/ytN0JQP7Vn8wMSiCGlOWw==",
   "success": true,
-  "projectFilePath": "D:\\vs\\Messenger\\Messenger.csproj",
+  "projectFilePath": "C:\\vs\\RSAMessenger\\Messenger.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

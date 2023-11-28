@@ -1,6 +1,6 @@
 ﻿using Messenger.Models;
-using System.Numerics;
 using System.Numerics.Extensions;
+using System.Text.Json;
 
 namespace Messenger
 {
@@ -13,7 +13,7 @@ namespace Messenger
         {
             _httpHelper = httpHelper;
         }
-        
+
         // Write the public key for the given email to a file
         public async Task GetKey(string email)
         {
@@ -28,10 +28,26 @@ namespace Messenger
             File.WriteAllText($"{email}.key", response);
         }
 
-        // Generate a new key pair and write the public and private keys to files
-        public async Task GenerateKey(int keysize)
+        // Send the public key saved on disk to the server
+        public async Task SendKey(string email)
         {
-            var pSize = (int)((keysize / 2) + (0.2 * keysize));
+            string? publicKeyStr = File.Exists("public.key") ? File.ReadAllText("public.key") : null;
+            if (string.IsNullOrEmpty(publicKeyStr))
+            {
+                Console.WriteLine($"Key does not exist for {email}");
+                return;
+            }
+
+            var publicKey = JsonSerializer.Deserialize<Key>(publicKeyStr);
+            await _httpHelper.Post($"{BASE_URL}{email}", publicKey);
+
+            Console.WriteLine("Key saved");
+        }
+
+        // Generate a new key pair and write the public and private keys to files
+        public void GenerateKeys(int keysize)
+        {
+            var pSize = (int)((keysize / 2) * 1.2);
             var p = BigIntegerExtensions.GenerateRandomPrimeBigInteger(pSize);
             var q = BigIntegerExtensions.GenerateRandomPrimeBigInteger(keysize - pSize);
 
@@ -51,6 +67,13 @@ namespace Messenger
                 modulus = N,
                 exponent = D
             };
+
+            var serializedPublicKey = JsonSerializer.Serialize(new PublicKey { Email = "", Key = publicKey.ToString() });
+            var serializedPrivateKey = JsonSerializer.Serialize(new PrivateKey { Email = new List<string>(), Key = privateKey.ToString() });
+
+            // Write these in the proper format
+            File.WriteAllText("public.key", serializedPublicKey);
+            File.WriteAllText("private.key", serializedPrivateKey);
         }
     }
 }

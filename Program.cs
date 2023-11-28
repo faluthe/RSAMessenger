@@ -25,7 +25,7 @@
                         break;
                     case "keyGen":
                         int keysize = int.Parse(args[1]);
-                        await keyManager.GenerateKey(keysize);
+                        keyManager.GenerateKeys(keysize);
                         break;
                 }
             }

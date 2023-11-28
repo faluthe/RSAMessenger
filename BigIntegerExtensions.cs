@@ -65,11 +65,12 @@ namespace System.Numerics.Extensions
                 bytes[bytes.Length - 1] = 0;
                 var bi = new BigInteger(bytes);
 
-                if (bi.IsProbablyPrime())
+                if (!bi.IsEven && bi.IsProbablyPrime())
                 {
                     lock (lockObj)
                     {
                         found = bi;
+                        state.Break();
                     }
                 }
             });

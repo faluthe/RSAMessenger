@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Messenger": {
+      "commandName": "Project",
+      "commandLineArgs": "sendMsg p@rit.edu"
+    }
+  }
+}
